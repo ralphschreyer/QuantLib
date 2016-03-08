@@ -152,6 +152,14 @@
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">CallableBonds-$(qlCompilerTag)-mt</TargetName>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">CallableBonds-$(qlCompilerTag)-x64-mt</TargetName>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <IncludePath>$(BOOST_INCLUDE_DIR);$(IncludePath)</IncludePath>
+    <LibraryPath>$(BOOST_LIB_DIR_VS2015);$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>$(BOOST_INCLUDE_DIR);$(IncludePath)</IncludePath>
+    <LibraryPath>$(BOOST_LIB_DIR_VS_2015);$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <Midl>
       <TypeLibraryName>.\build\$(qlCompilerTag)\$(Platform)\$(Configuration)\CallableBonds.tlb</TypeLibraryName>
